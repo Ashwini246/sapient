@@ -13,7 +13,6 @@
     "serve:ssr": "node dist/server/main.js",
     "build:ssr": "ng lint && ng build --prod && ng run angular.io-example:server:production",
     "prerender": "ng run angular.io-example:prerender",
-    "postinstall": "ng lint && ng build --prod && ng run angular.io-example:server:production",
     "start": "node dist/server/main.js"
   },
   "private": true,
