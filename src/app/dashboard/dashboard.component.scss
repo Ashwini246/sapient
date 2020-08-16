@@ -1,0 +1,118 @@
+/* DashboardComponent's private CSS styles */
+[class*='col-'] {
+  float: left;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+[class*='col-']:last-of-type {
+  padding-right: 0;
+}
+a {
+  text-decoration: none;
+}
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+h3 {
+  text-align: center;
+  margin-bottom: 0;
+}
+h4 {
+  position: relative;
+}
+//.grid {
+//  margin: 0;
+//}
+.col-1-4 {
+  width: 25%;
+}
+.grid-pad {
+  padding: 10px 0;
+}
+.grid-pad > [class*='col-']:last-of-type {
+  padding-right: 20px;
+}
+@media (max-width: 600px) {
+  .module {
+    font-size: 10px;
+    max-height: 75px; }
+}
+@media (max-width: 1024px) {
+  .grid {
+    margin: 0;
+  }
+  .module {
+    min-width: 60px;
+  }
+}
+.sidenav {
+  height:auto; /* Full-height: remove this if you want "auto" height */
+  width: 12%; /* Set the width of the sidebar */
+  float: left;
+  padding-top: 20px;
+}
+
+.space-block {
+  background-color: white;
+  padding: 3px;
+  margin: 3px;
+  height: 100%;
+}
+.spaceb {
+  width: 80%;
+  float: right;
+}
+.space-container{
+  background-color: #E8E8E8;
+  width: 100%;
+  max-width: 100%;
+}
+
+.col-1-2 {
+  padding-right: 15px;
+  padding-bottom: 20px;
+  padding-left: 15px;
+}
+.space-button {
+  margin: 10px;
+  padding-bottom: 5px
+}
+.gray-c {
+  background-color: #E8E8E8;
+}
+.white-c {
+  background-color: white;
+}
+
+.selected {
+  background-color: #00cc33;
+}
+
+.n-selected {
+  background-color: #80ff9f;
+}
+.img-block {
+  width: 90%;
+  height: 200px;
+  background-color: #E8E8E8;
+}
+
+.blue-c {
+  color: #336699;
+}
+
+.left {
+  float: left;
+}
+.pm {
+  padding: 5px 5px;
+}
+.name-title {
+  bottom: 0;
+  width: 100%;
+}
+.center {
+  width: 100%;
+}

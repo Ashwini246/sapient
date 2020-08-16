@@ -1,0 +1,69 @@
+<div class="container space-container">
+  <div class="sidenav grid-box gray-c">
+    <div class="white-c">
+      Filters
+      <div class="row white-c">
+        Launch Year
+      </div>
+      <div class="row white-c">
+        <div *ngFor="let year of this.years" class="col-1-2">
+          <button [ngClass]="launchYear === year ? 'selected' : 'n-selected'"
+                  (click)="onChangeYear(year)">{{year}}</button>
+        </div>
+      </div>
+      Successful Launch
+      <div class="row white-c">
+        <button [ngClass]="launchSuccess ? 'selected': 'n-selected'" class="col-1-2 space-button"
+                (click)="onChangeLaunch(true)">True
+        </button>
+        <button [ngClass]="!launchSuccess ? 'selected': 'n-selected'" class="col-1-2 space-button"
+                (click)="onChangeLaunch(false)">False
+        </button>
+      </div>
+      Successful Landing
+      <div class="row white-c">
+        <button [ngClass]="landSuccess ? 'selected': 'n-selected'" class="col-1-2 space-button"
+                (click)="onChangeLanding(true)">True
+        </button>
+        <button [ngClass]="!landSuccess ? 'selected': 'n-selected'" class="col-1-2 space-button"
+                (click)="onChangeLanding(false)">False
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid grid-pad spaceb gray-c">
+    <div class="container">
+      <h3>SpaceX Launch programs</h3> <!-- container centers content on large screens -->
+      <div class="row">
+        <div class="col-lg-3 col-md-6 col-sm-12" *ngFor="let program of this.filteredProg">
+          <div class="grid-box space-block">
+            <div class="img-block">
+              <img src="{{program.links.mission_patch}}" alt="{{program.mission_name}}">
+            </div>
+            <h5 class="blue-c">{{program.mission_name}} # {{program.flight_number}}</h5>
+            <b>Mission IDs</b>
+            <ul *ngFor="let mission of program.mission_id">
+              <li class="blue-c">{{mission}}</li>
+            </ul>
+            <br *ngIf="!program.mission_id.length">
+            <br *ngIf="!program.mission_id.length">
+            <b class="left pm">Launch Year: </b>
+            <div class="blue-c pm">{{program.launch_year}}</div>
+            <b class="left pm">Successful Launch: </b>
+            <div class="blue-c pm">{{program.launch_success}}</div>
+            <b class="left pm">Successful Landing: </b>
+            <div class="blue-c pm">{{program.rocket.first_stage.cores[0].land_success}}</div>
+          </div>
+        </div>
+      </div>
+      <div class="row" *ngIf="!filteredProg.length">
+        <b>No space programs available</b>
+      </div>
+      <div class="row name-title">
+        <p class="center" align="center" >Developed by Ashwini</p>
+      </div>
+    </div>
+  </div>
+</div>
+
