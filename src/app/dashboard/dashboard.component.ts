@@ -21,7 +21,7 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.launchYear = '2018';
+    this.launchYear = '2006';
     this.getHeroes();
   }
 
