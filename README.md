@@ -48,7 +48,7 @@ Execute the below command to generate test report
 
 **_Lighthouse score, Accessibility and SEO_**
 
-Attached the lighthouse report screenshot in the code - lighthouse.png
+Attached the lighthouse report in the code - lighthouse.pdf
 
 
 
