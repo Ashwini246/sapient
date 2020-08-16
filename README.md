@@ -7,7 +7,7 @@ Angular Universal or Angular SSR (server-side rendering) is used for developing 
 
 This helps Angular applications with SEO (search engine optimization), social-media previews, and even perceived performance.
 
-Steps to build Angualr SSR app:
+Steps to build Angular SSR app:
 
     1. Build a regular angular application
     2. Install the latest Angular Universal engine - ng add @nguniversal/express-engine
