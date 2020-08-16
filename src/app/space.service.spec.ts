@@ -45,4 +45,23 @@ describe('SpaceService', () => {
       req.flush(expectedprograms);
     });
   });
+
+  describe('getFilteredPrograms', () => {
+    let expectedprograms: Programs[];
+    beforeEach(() => {
+
+      // Dummy data to be returned by request.
+      expectedprograms = mockProgram as Programs[];
+    });
+
+
+    it('makes expected calls', () => {
+      service.getFilteredPrograms({launchYear: 2006}).subscribe(res => {
+        expect(res).toEqual(expectedprograms);
+      });
+      const req = httpTestingController.expectOne('https://api.spaceXdata.com/v3/launches?limit=100&launch_year=2006');
+      expect(req.request.method).toEqual('GET');
+      req.flush(expectedprograms);
+    });
+  });
 });

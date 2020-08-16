@@ -28,7 +28,6 @@
     "@angular/platform-server": "~9.1.4",
     "@angular/router": "~9.1.4",
     "@nguniversal/express-engine": "~9.0.1",
-    "angular-in-memory-web-api": "~0.11.0",
     "bootstrap": "^4.5.2",
     "express": "^4.15.2",
     "parse5": "^6.0.1",

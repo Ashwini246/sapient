@@ -31,4 +31,17 @@ export class SpaceService {
         tap(_ => console.log('fetched programs')),
       );
   }
+
+  getFilteredPrograms(payload): Observable<Programs[]> {
+    let url = this.spaceUrl;
+    if (payload.launchYear) {
+      url += `&launch_year=${payload.launchYear}`;
+    }
+    if (payload.successful_landing) { url += `&land_success=${payload.successful_landing}`; }
+    if (payload.successful_launch) { url += `&launch_success=${payload.successful_launch}`; }
+    return this.http.get<Programs[]>(url)
+      .pipe(
+        tap(_ => console.log('fetched programs')),
+      );
+  }
 }

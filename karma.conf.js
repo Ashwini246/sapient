@@ -22,7 +22,7 @@ module.exports = function (config) {
       thresholds: {
         statements: 80,
         lines: 80,
-        functions: 70
+        functions: 80
       }
     },
     reporters: ['progress', 'kjhtml'],

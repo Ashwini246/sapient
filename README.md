@@ -36,10 +36,10 @@ For responsive UI, bootstrap library is used to change the layout dynamically ba
 Unit tests are written using Jasmine framework for components and services.
 Coverage report:
 
-    Statements   : 87.04% ( 47/54 )
-    Branches     : 50% ( 12/24 )
-    Functions    : 72.22% ( 13/18 )
-    Lines        : 86.27% ( 44/51 )
+    Statements   : 88.75% ( 71/80 )
+    Branches     : 53.13% ( 17/32 )
+    Functions    : 82.76% ( 24/29 )
+    Lines        : 90.54% ( 67/74 )
 
 Execute the below command to generate test report
 
