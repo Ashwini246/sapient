@@ -29,11 +29,9 @@ export class DashboardComponent implements OnInit {
     this.spaceService.getPrograms()
       .subscribe(programs => {
         this.allPrograms = programs;
-        console.log('Programs', programs);
         this.filteredProg = this.allPrograms.filter((program) => {
           return (program.launch_year ===  this.launchYear);
         });
-        console.log('Initial prog', this.filteredProg);
       });
   }
 
@@ -57,7 +55,6 @@ export class DashboardComponent implements OnInit {
   }
 
   applyFilter() {
-    console.log('All prog', this.allPrograms);
     if (this.landSuccess && this.launchSuccess) {
       this.filteredProg = this.allPrograms.filter((program) => {
         return (program.launch_year === this.launchYear && program.launch_success === this.launchSuccess && get(program, 'rocket.first_stage.cores[0].land_success') === this.landSuccess);
@@ -79,6 +76,5 @@ export class DashboardComponent implements OnInit {
         return (program.launch_year === this.launchYear);
       });
     }
-    console.log('Filtered prog', this.filteredProg);
   }
 }
