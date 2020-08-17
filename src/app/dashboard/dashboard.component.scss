@@ -4,11 +4,6 @@
   padding-right: 0%;
   padding-bottom: 20px;
 }
-
-[class*='col-']:last-of-type {
-  padding-right: 0;
-}
-
 a {
   text-decoration: none;
 }
@@ -57,9 +52,9 @@ h4 {
 
 .sidenav {
   height: auto; /* Full-height: remove this if you want "auto" height */
-  width: 15%; /* Set the width of the sidebar */
+  width: 16%; /* Set the width of the sidebar */
   float: left;
-  padding-top: 0px;
+  padding-top: 0;
 }
 
 .space-block {
@@ -135,11 +130,6 @@ h4 {
   width: 100%;
 }
 
-.pma {
-  padding: 1pc;
-  margin: 0 0.5pc;
-}
-
 #prs {
   padding-right: 10px !important;
 }
@@ -168,3 +158,10 @@ h4 {
     margin: -2pc;
   }
 }
+.pmc {
+  padding: 0.5pc 0.5pc;
+}
+.prc {
+  padding-right: 0.5pc;
+}
+
