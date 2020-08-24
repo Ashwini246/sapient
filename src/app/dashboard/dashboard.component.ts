@@ -21,7 +21,8 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.launchYear = '2006';
+    this.landSuccess = null;
+    this.launchSuccess = null;
     this.getHeroes();
   }
 
@@ -29,9 +30,7 @@ export class DashboardComponent implements OnInit {
     this.spaceService.getPrograms()
       .subscribe(programs => {
         this.allPrograms = programs;
-        this.filteredProg = this.allPrograms.filter((program) => {
-          return (program.launch_year ===  this.launchYear);
-        });
+        this.filteredProg = this.allPrograms;
       });
   }
 
@@ -60,13 +59,37 @@ export class DashboardComponent implements OnInit {
         return (program.launch_year === this.launchYear && program.launch_success === this.launchSuccess && get(program, 'rocket.first_stage.cores[0].land_success') === this.landSuccess);
       });
     } else if (this.landSuccess) {
-      this.filteredProg = this.allPrograms.filter((program) => {
-        return (program.launch_year === this.launchYear && get(program, 'rocket.first_stage.cores[0].land_success') === this.landSuccess);
-      });
+      if (this.launchSuccess === true) {
+        this.filteredProg = this.allPrograms.filter((program) => {
+          return (program.launch_year === this.launchYear && get(program, 'rocket.first_stage.cores[0].land_success') === this.landSuccess
+            && program.launch_success === true);
+        });
+      } else if (this.launchSuccess === false) {
+        this.filteredProg = this.allPrograms.filter((program) => {
+          return (program.launch_year === this.launchYear && get(program, 'rocket.first_stage.cores[0].land_success') === this.landSuccess
+            && program.launch_success === false);
+        });
+      } else {
+        this.filteredProg = this.allPrograms.filter((program) => {
+          return (program.launch_year === this.launchYear && get(program, 'rocket.first_stage.cores[0].land_success') === this.landSuccess);
+        });
+      }
     } else if (this.launchSuccess) {
-      this.filteredProg = this.allPrograms.filter((program) => {
-        return (program.launch_year === this.launchYear && program.launch_success === this.launchSuccess);
-      });
+      if (this.landSuccess === true) {
+        this.filteredProg = this.allPrograms.filter((program) => {
+          return (program.launch_year === this.launchYear && get(program, 'rocket.first_stage.cores[0].land_success') === true
+            && program.launch_success === this.launchSuccess);
+        });
+      } else if (this.landSuccess === false) {
+        this.filteredProg = this.allPrograms.filter((program) => {
+          return (program.launch_year === this.launchYear && get(program, 'rocket.first_stage.cores[0].land_success') === this.landSuccess
+            && this.launchSuccess === this.launchSuccess);
+        });
+      } else {
+        this.filteredProg = this.allPrograms.filter((program) => {
+          return (program.launch_year === this.launchYear && program.launch_success === this.launchSuccess);
+        });
+      }
     } else if (this.landSuccess === false && this.launchSuccess === false) {
       this.filteredProg = this.allPrograms.filter((program) => {
         return (program.launch_year === this.launchYear && program.launch_success === this.launchSuccess && get(program, 'rocket.first_stage.cores[0].land_success') === this.landSuccess);

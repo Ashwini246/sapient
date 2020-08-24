@@ -13,10 +13,10 @@
           <div *ngIf="i % 2 === 0" class="row">
             <button class="col-1-3 desc pmc" *ngIf="years[i]"
                     [ngClass]="launchYear === years[i] ? 'selected' : 'n-selected'"
-                    (click)="onChangeYear(year)">{{years[i]}}</button>
+                    (click)="onChangeYear(years[i])">{{years[i]}}</button>
             <button class="col-1-3 desc pmc prc" *ngIf="years[i+1]"
                     [ngClass]="launchYear === years[i+1]  ? 'selected' : 'n-selected'"
-                    (click)="onChangeYear(year)">{{years[i + 1]}}</button>
+                    (click)="onChangeYear(years[i+1])">{{years[i + 1]}}</button>
           </div>
         </div>
       </div>
@@ -25,10 +25,10 @@
       </p>
       <hr>
       <div class="row white-c">
-        <button [ngClass]="launchSuccess ? 'selected': 'n-selected'" class="col-1-2 space-button"
+        <button [ngClass]="launchSuccess === true ? 'selected': 'n-selected'" class="col-1-2 space-button"
                 (click)="onChangeLaunch(true)">True
         </button>
-        <button id="prs1" [ngClass]="!launchSuccess ? 'selected': 'n-selected'" class="col-1-2 space-button prs"
+        <button id="prs1" [ngClass]="launchSuccess === false ? 'selected': 'n-selected'" class="col-1-2 space-button prs"
                 (click)="onChangeLaunch(false)">False
         </button>
       </div>
@@ -37,10 +37,10 @@
       </p>
       <hr>
       <div class="row white-c">
-        <button [ngClass]="landSuccess ? 'selected': 'n-selected'" class="col-1-2 space-button"
+        <button [ngClass]="landSuccess === true ? 'selected': 'n-selected'" class="col-1-2 space-button"
                 (click)="onChangeLanding(true)">True
         </button>
-        <button id="prs" [ngClass]="!landSuccess ? 'selected': 'n-selected'" class="col-1-2 space-button"
+        <button id="prs" [ngClass]="landSuccess === false? 'selected': 'n-selected'" class="col-1-2 space-button"
                 (click)="onChangeLanding(false)">False
         </button>
       </div>

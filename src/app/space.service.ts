@@ -38,7 +38,9 @@ export class SpaceService {
       url += `&launch_year=${payload.launchYear}`;
     }
     if (payload.successful_landing) { url += `&land_success=${payload.successful_landing}`; }
+    if (payload.successful_landing === false) {url += `&land_success=${payload.successful_landing}`; }
     if (payload.successful_launch) { url += `&launch_success=${payload.successful_launch}`; }
+    if (payload.successful_launch === false) { url += `&launch_success=${payload.successful_launch}`; }
     return this.http.get<Programs[]>(url)
       .pipe(
         tap(_ => console.log('fetched programs')),

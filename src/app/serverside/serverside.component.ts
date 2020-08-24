@@ -22,13 +22,11 @@ export class ServersideComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.launchYear = '2006';
     this.getHeroes();
   }
 
   getHeroes(): void {
     const payload = {
-      launchYear: 2006
     };
     this.spaceService.getFilteredPrograms(payload)
       .subscribe(programs => {
